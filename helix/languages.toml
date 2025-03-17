@@ -1,0 +1,12 @@
+[[language]]
+name = "markdown"
+text-width = 80
+soft-wrap.wrap-at-text-width = true
+language-servers = ["marksman", "ltex-ls-plus"]
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "markdown",
+  "--prose-wrap",
+  "never"
+] }
+auto-format = true

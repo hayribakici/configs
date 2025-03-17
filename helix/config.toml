@@ -1,0 +1,36 @@
+theme = "gruvbox_dark_soft"
+
+[editor]
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+# At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
+[keys.normal]
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+C-q = ":bc" # close buffer
+
+#a = "move_char_left" # Maps the 'a' key to the move_char_left command
+#w = "move_line_up" # Maps the 'w' key move_line_up
+
+# create a new minor mode bound to `+`
+[keys.normal."+"]
+m = ":run-shell-command make"
+q = ":q!" # Force quit
+r = ":config-reload"
+
+[keys.normal.space.t]
+z = ":toggle gutters.line-numbers.min-width 55 3"
